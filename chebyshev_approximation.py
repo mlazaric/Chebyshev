@@ -1,4 +1,4 @@
-from sympy import Poly, plot, series, degree
+from sympy import Poly, plot, series
 from sympy.abc import x
 from chebyshev_polynomial import lower_degree_to
 
