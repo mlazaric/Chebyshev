@@ -1,34 +1,22 @@
 #! /bin/python
-from sympy import *
+from chebyshev_approximation import approximate_function
+from sympy import plot, exp, Poly, lambdify
 from sympy.abc import x
+from numpy import linspace
 
-computed_polynomials = [1, x] 
+function1 = exp(x)
+interval1 = (x, 0, 1)
+degree1 = 6
+approximation1 = approximate_function(function1, degree1)
 
-def get_nth_chebyshev_polynomial(n):
-    if (len(computed_polynomials) - 1) >= n:
-        return computed_polynomials[n] 
+for coeff in reversed(Poly(approximation1).all_coeffs()):
+    print(float(coeff), end=' ')
 
-    polynomial = simplify(2 * x * get_nth_chebyshev_polynomial(n - 1) 
-                                - get_nth_chebyshev_polynomial(n - 2))
+curr_x = interval1[1]
+err = 0
 
-    computed_polynomials.append(polynomial)
-
-    return polynomial
-
-def normalise_polynomial(polynomial):
-    return polynomial / LC(polynomial)
-
-def lower_degree_to(polynomial, n):
-    while degree(polynomial) > n:
-        chebyshev_polynomial = get_nth_chebyshev_polynomial(degree(polynomial))
-        normalised_polynomial = normalise_polynomial(chebyshev_polynomial)
-
-        polynomial -= normalised_polynomial * LC(polynomial)
-
-    return polynomial
-
-approx = series(ln(1+x), x, n=8).removeO()
-print(approx)
-approx = simplify(lower_degree_to(approx, 6))
-print(approx)
-plot(abs(approx - log(1+x)), (x, 0, 1))
+while curr_x < interval1[2]:
+    err = max(abs((function1 - approximation1).subs({x: curr_x})), err)
+    curr_x += 0.01
+print(err)
+plot(abs(function1 - approximation1), interval1)
