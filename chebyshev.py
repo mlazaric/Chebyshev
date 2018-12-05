@@ -1,22 +1,21 @@
 #! /bin/python
-from chebyshev_approximation import approximate_function
-from sympy import plot, exp, Poly, lambdify
+from sympy import exp, ln, sin, cos
 from sympy.abc import x
-from numpy import linspace
+from chebyshev_approximation import Approximation
 
-function1 = exp(x)
-interval1 = (x, 0, 1)
-degree1 = 6
-approximation1 = approximate_function(function1, degree1)
+approx1 = Approximation(exp(x), (0, 1), 6)
+print(approx1.get_coeffs())
+print(approx1.get_error())
+#approx1.plot_absolute_error()
 
-for coeff in reversed(Poly(approximation1).all_coeffs()):
-    print(float(coeff), end=' ')
+approx2 = Approximation(ln(1 + x), (0, 1), 6)
+print(approx2.get_coeffs())
+print(approx2.get_error())
 
-curr_x = interval1[1]
-err = 0
+approx3 = Approximation(sin(x) / x, (-1, 1), 8)
+print(approx3.get_coeffs())
+print(approx3.get_error())
 
-while curr_x < interval1[2]:
-    err = max(abs((function1 - approximation1).subs({x: curr_x})), err)
-    curr_x += 0.01
-print(err)
-plot(abs(function1 - approximation1), interval1)
+approx4 = Approximation(cos(x), (-1, 1), 8)
+print(approx4.get_coeffs())
+print(approx4.get_error())

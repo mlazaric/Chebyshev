@@ -1,5 +1,5 @@
 from sympy.abc import x
-from sympy import LC, simplify
+from sympy import LC, simplify, degree
 
 computed_polynomials = [1, x]
 
@@ -19,3 +19,11 @@ def normalise_polynomial(polynomial):
 
 def get_normalised_nth_chebyshev_polynomial(n):
     return normalise_polynomial(get_nth_chebyshev_polynomial(n))
+
+def lower_degree_to(polynomial, n):
+    while degree(polynomial) > n:
+        normalised_chebyshev_polynomial = get_normalised_nth_chebyshev_polynomial(degree(polynomial))
+
+        polynomial -= normalised_chebyshev_polynomial * LC(polynomial)
+
+    return polynomial
