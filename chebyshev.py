@@ -20,7 +20,7 @@ def get_best_approximation(function, interval, polynomial_degree, start_taylor_d
 
     return prev_approximation
 
-approx1 = get_best_approximation(exp(x), (0, 1), 6, 7, point=0.5)
+approx1 = get_best_approximation(exp(x), (0, 1), 6, 7)
 print("Coefficients for exp(x) on the [0, 1] interval")
 print(approx1.get_coeffs())
 print("Maximum error on that interval")
