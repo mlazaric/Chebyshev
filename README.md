@@ -24,7 +24,7 @@ Coefficients for `exp(x)` on the `[0, 1]` interval:
 
 Maximum error on that interval: `2.724750259641695e-06`
 
-![f1.png](f1.png)
+![f1.png](images/f1.png)
 
 ### 2nd function: `ln(1 + x)`
 
@@ -42,7 +42,7 @@ Coefficients for `ln(1 + x)` on the `[0, 1]` interval:
 
 Maximum error on that interval: `0.026814743150640807`
 
-![f2.png](f2.png)
+![f2.png](images/f2.png)
 
 ### 3rd function: `sin(x) / x`
 
@@ -58,7 +58,7 @@ Coefficients for `sin(x) / x` on the `[-1, 1]` interval:
 
 Maximum error on that interval: `4.807454434541114e-11`
 
-![f3.png](f3.png)
+![f3.png](images/f3.png)
 
 ### 4th function: `cos(x)`
 
@@ -74,4 +74,4 @@ Coefficients for `cos(x)` on the `[-1, 1]` interval:
 
 Maximum error on that interval: `5.271243441740125e-10`
 
-![f4.png](f4.png)
+![f4.png](images/f4.png)

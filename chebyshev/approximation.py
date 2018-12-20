@@ -1,7 +1,8 @@
 from sympy import Poly, plot, series
 from sympy.abc import x
 from numpy import polyval
-from chebyshev_polynomial import lower_degree_to
+from chebyshev.polynomial import lower_degree_to
+
 
 class Approximation:
     def __init__(self, function, interval, polynomial_degree, taylor_degree=20, point=0):
@@ -63,3 +64,20 @@ class Approximation:
 
     def plot_absolute_error(self, ylabel=''):
         plot(abs(self.function - self.approximation), (x, self.interval[0], self.interval[1]), ylabel=ylabel)
+
+
+def get_best_approximation(function, interval, polynomial_degree, start_taylor_degree=None, point=0):
+    if start_taylor_degree is None:
+        start_taylor_degree = polynomial_degree + 1
+
+    prev_approximation = Approximation(function, interval, polynomial_degree, start_taylor_degree, point)
+    curr_approximation = Approximation(function, interval, polynomial_degree, start_taylor_degree + 1, point)
+    taylor_degree = start_taylor_degree + 2
+
+    while prev_approximation.get_error() > curr_approximation.get_error():
+        prev_approximation = curr_approximation
+        curr_approximation = Approximation(function, interval, polynomial_degree, taylor_degree, point)
+        taylor_degree += 1
+        print(taylor_degree)
+
+    return prev_approximation
