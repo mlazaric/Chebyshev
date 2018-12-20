@@ -24,6 +24,19 @@ class Approximation:
 
         return coeffs
 
+    def print_coeffs_as_table(self):
+        print('|        Coefficient        |  Term  |')
+        print('|---------------------------|--------|')
+
+        for (term, coeff) in Poly(self.approximation).all_terms():
+            if coeff == 0:
+                continue
+
+            xterm = x ** term[0]
+            fcoeff = coeff.evalf(20)
+
+            print(f'| `{fcoeff:+1.20f}` | `{xterm}` |')
+
     def get_error(self):
         error = 0
         curr_x = self.interval[0]
