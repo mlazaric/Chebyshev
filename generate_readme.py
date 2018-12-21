@@ -27,9 +27,7 @@ Coefficients for `{approximation.function}` on the `[{approximation.interval[0]}
 
 Maximum error on that interval is `{approximation.get_error()}`
 
-![{approximation_plot_filename}]({approximation_plot_filename})
-
-![{absolute_error_plot_filename}]({absolute_error_plot_filename})
+<img src="{approximation_plot_filename}" alt="{approximation_plot_filename}" width="50%"><img src="{absolute_error_plot_filename}" alt="{absolute_error_plot_filename}" width="50%">
 """)
 
     plotted = approximation.plot_approximation(show=False)

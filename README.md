@@ -31,9 +31,7 @@ Coefficients for `exp(x)` on the `[0, 1]` interval:
 
 Maximum error on that interval is `2.724750259197606e-06`
 
-![images/exp(x)_approximation.png](images/exp(x)_approximation.png)
-
-![images/exp(x)_absolute_error.png](images/exp(x)_absolute_error.png)
+<img src="images/exp(x)_approximation.png" alt="images/exp(x)_approximation.png" width="50%"><img src="images/exp(x)_absolute_error.png" alt="images/exp(x)_absolute_error.png" width="50%">
 
 ## `log(x + 1)`
 
@@ -52,9 +50,7 @@ Coefficients for `log(x + 1)` on the `[0, 1]` interval:
 
 Maximum error on that interval is `0.026814743150641585`
 
-![images/log(x_+_1)_approximation.png](images/log(x_+_1)_approximation.png)
-
-![images/log(x_+_1)_absolute_error.png](images/log(x_+_1)_absolute_error.png)
+<img src="images/log(x_+_1)_approximation.png" alt="images/log(x_+_1)_approximation.png" width="50%"><img src="images/log(x_+_1)_absolute_error.png" alt="images/log(x_+_1)_absolute_error.png" width="50%">
 
 ## `sin(x)/x`
 
@@ -71,9 +67,7 @@ Coefficients for `sin(x)/x` on the `[-1, 1]` interval:
 
 Maximum error on that interval is `4.807454434541114e-11`
 
-![images/sin(x)_x_approximation.png](images/sin(x)_x_approximation.png)
-
-![images/sin(x)_x_absolute_error.png](images/sin(x)_x_absolute_error.png)
+<img src="images/sin(x)_x_approximation.png" alt="images/sin(x)_x_approximation.png" width="50%"><img src="images/sin(x)_x_absolute_error.png" alt="images/sin(x)_x_absolute_error.png" width="50%">
 
 ## `cos(x)`
 
@@ -90,6 +84,4 @@ Coefficients for `cos(x)` on the `[-1, 1]` interval:
 
 Maximum error on that interval is `5.271243441740125e-10`
 
-![images/cos(x)_approximation.png](images/cos(x)_approximation.png)
-
-![images/cos(x)_absolute_error.png](images/cos(x)_absolute_error.png)
+<img src="images/cos(x)_approximation.png" alt="images/cos(x)_approximation.png" width="50%"><img src="images/cos(x)_absolute_error.png" alt="images/cos(x)_absolute_error.png" width="50%">
