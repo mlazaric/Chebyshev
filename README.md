@@ -6,30 +6,39 @@
 pip install -r requirements.txt
 ```
 
-## Results
+## Functions
 
-### 1st function: `exp(x)`
+* [`exp(x)`](#expx)
+* [`log(x + 1)`](#logx--1)
+* [`sin(x)/x`](#sinxx)
+* [`cos(x)`](#cosx)
+
+
+## `exp(x)`
 
 Coefficients for `exp(x)` on the `[0, 1]` interval:
-
+     
 |        Coefficient        |  Term  |
 |---------------------------|--------|
-| `+0.00143927433453744469` | `x**6` |
-| `+0.00868682099062309994` | `x**5` |
-| `+0.04163501203494369417` | `x**4` |
-| `+0.16648887315637634486` | `x**3` |
-| `+0.50000634734458057617` | `x**2` |
-| `+1.00002228999854835830` | `x` |
-| `+0.99999980133707121074` | `1` |
+| `+0.00228989065375017828` | `x**6` |
+| `+0.00686967196125053310` | `x**5` |
+| `+0.04293544975781583839` | `x**4` |
+| `+0.16601707239688789919` | `x**3` |
+| `+0.50019798967855455540` | `x**2` |
+| `+0.99996662485953080601` | `x` |
+| `+1.00000240440099563700` | `1` |
 
-Maximum error on that interval: `2.724750259641695e-06`
 
-![f1.png](images/f1.png)
+Maximum error on that interval is `2.724750259197606e-06`
 
-### 2nd function: `ln(1 + x)`
+![images/exp(x)_approximation.png](images/exp(x)_approximation.png)
 
-Coefficients for `ln(1 + x)` on the `[0, 1]` interval:
+![images/exp(x)_absolute_error.png](images/exp(x)_absolute_error.png)
 
+## `log(x + 1)`
+
+Coefficients for `log(x + 1)` on the `[0, 1]` interval:
+     
 |        Coefficient        |  Term  |
 |---------------------------|--------|
 | `-1.78206380208333333330` | `x**6` |
@@ -40,14 +49,17 @@ Coefficients for `ln(1 + x)` on the `[0, 1]` interval:
 | `+1.16706848144531250000` | `x` |
 | `+0.01269240000891307044` | `1` |
 
-Maximum error on that interval: `0.026814743150640807`
 
-![f2.png](images/f2.png)
+Maximum error on that interval is `0.026814743150641585`
 
-### 3rd function: `sin(x) / x`
+![images/log(x_+_1)_approximation.png](images/log(x_+_1)_approximation.png)
 
-Coefficients for `sin(x) / x` on the `[-1, 1]` interval:
+![images/log(x_+_1)_absolute_error.png](images/log(x_+_1)_absolute_error.png)
 
+## `sin(x)/x`
+
+Coefficients for `sin(x)/x` on the `[-1, 1]` interval:
+     
 |        Coefficient        |  Term  |
 |---------------------------|--------|
 | `+0.00000269375975765659` | `x**8` |
@@ -56,14 +68,17 @@ Coefficients for `sin(x) / x` on the `[-1, 1]` interval:
 | `-0.16666666426123592319` | `x**2` |
 | `+0.99999999995192540491` | `1` |
 
-Maximum error on that interval: `4.807454434541114e-11`
 
-![f3.png](images/f3.png)
+Maximum error on that interval is `4.807454434541114e-11`
 
-### 4th function: `cos(x)`
+![images/sin(x)_x_approximation.png](images/sin(x)_x_approximation.png)
+
+![images/sin(x)_x_absolute_error.png](images/sin(x)_x_absolute_error.png)
+
+## `cos(x)`
 
 Coefficients for `cos(x)` on the `[-1, 1]` interval:
-
+     
 |        Coefficient        |  Term  |
 |---------------------------|--------|
 | `+0.00002412120108317053` | `x**8` |
@@ -72,6 +87,9 @@ Coefficients for `cos(x)` on the `[-1, 1]` interval:
 | `-0.49999997362171781040` | `x**2` |
 | `+0.99999999947287565593` | `1` |
 
-Maximum error on that interval: `5.271243441740125e-10`
 
-![f4.png](images/f4.png)
+Maximum error on that interval is `5.271243441740125e-10`
+
+![images/cos(x)_approximation.png](images/cos(x)_approximation.png)
+
+![images/cos(x)_absolute_error.png](images/cos(x)_absolute_error.png)

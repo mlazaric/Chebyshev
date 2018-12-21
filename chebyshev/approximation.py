@@ -1,8 +1,8 @@
-from sympy import Poly, plot, series, Expr
+from sympy import Poly, series, Expr
+from sympy.plotting.plot import Plot, plot
 from sympy.abc import x
 from numpy import polyval
 from chebyshev.polynomial import lower_degree_to
-
 from typing import Tuple, Callable, List
 
 
@@ -65,16 +65,19 @@ class Approximation:
 
         return [float(coeff) for coeff in self.approximation.all_coeffs()]
 
-    def print_coeffs_as_table(self) -> None:
+    def get_coeffs_as_table(self) -> str:
         """
-        Prints coefficients of the approximation polynomial in a simple markdown table with two columns,
+        Returns coefficients of the approximation polynomial in a simple markdown table with two columns,
             first column contains the coefficients and the second the terms.
 
-        :rtype: None
+        :return: coefficients in a simple markdown table with two columns
+        :rtype: str
         """
 
-        print('|        Coefficient        |  Term  |')
-        print('|---------------------------|--------|')
+        table = ''
+
+        table += '|        Coefficient        |  Term  |\n'
+        table += '|---------------------------|--------|\n'
 
         for (term, coeff) in Poly(self.approximation).all_terms():
             if coeff == 0:
@@ -83,7 +86,9 @@ class Approximation:
             xterm = x ** term[0]
             fcoeff = coeff.evalf(20)
 
-            print(f'| `{fcoeff:+1.20f}` | `{xterm}` |')
+            table += f'| `{fcoeff:+1.20f}` | `{xterm}` |\n'
+
+        return table
 
     def get_error(self,
                   step: float = 0.01) -> float:
@@ -127,26 +132,56 @@ class Approximation:
 
         return error
 
-    def plot_approximation(self) -> None:
+    def plot_approximation(self,
+                           title: str = None,
+                           nb_of_points: int = 400,
+                           show: bool = True) -> Plot:
         """
         Plots the approximation polynomial using sympy's plot function on the given interval.
 
-        :rtype: None
+        :param title: title for the plot
+        :param nb_of_points: number of points
+        :param show: whether to show the plot
+        :return: plot of the approximation
+        :rtype: Plot
         """
 
-        plot(self.approximation, (x, self.interval[0], self.interval[1]))
+        if title is None:
+            title = f'f(x) $\\approx$ {self.function}'
+
+        return plot(self.approximation.as_expr(),
+                    (x, self.interval[0], self.interval[1]),
+                    title=title,
+                    adaptive=False,
+                    nb_of_points=nb_of_points,
+                    show=show,
+                    ylabel='')
 
     def plot_absolute_error(self,
-                            ylabel: str = '') -> None:
+                            title: str = None,
+                            nb_of_points: int = 400,
+                            show: bool = True) -> Plot:
         """
         Plots the absolute error between the function and the approximation polynomial using sympy's plot
             on the given interval.
 
-        :param ylabel: label for the y axis
-        :rtype: None
+        :param title: title for the plot
+        :param nb_of_points: number of points
+        :param show: whether to show the plot
+        :return: plot of the absolute error
+        :rtype: Plot
         """
 
-        plot(abs(self.function - self.approximation), (x, self.interval[0], self.interval[1]), ylabel=ylabel)
+        if title is None:
+            title = f'y = |f(x) - {self.function}|'
+
+        return plot(abs(self.function - self.approximation),
+                    (x, self.interval[0], self.interval[1]),
+                    title=title,
+                    adaptive=False,
+                    nb_of_points=nb_of_points,
+                    ylabel='',
+                    show=show)
 
 
 def get_best_approximation(function: Expr,
