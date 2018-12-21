@@ -1,3 +1,7 @@
+"""
+Module for approximating sympy expressions using the Taylor series and Chebyshev polynomials.
+"""
+
 from sympy import Poly, series, Expr
 from sympy.plotting.plot import Plot, plot
 from sympy.abc import x

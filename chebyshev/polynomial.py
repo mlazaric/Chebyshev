@@ -1,3 +1,8 @@
+"""
+Module for calculating and caching Chebyshev polynomials, as well as
+  some helper functions regarding polynomial manipulation.
+"""
+
 from sympy import Poly
 from sympy.abc import x
 
