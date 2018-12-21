@@ -1,12 +1,35 @@
 # Chebyshev [![Build Status](https://travis-ci.org/mlazaric/Chebyshev.svg?branch=master)](https://travis-ci.org/mlazaric/Chebyshev)
 
+## Introduction
+
+A simple python module for approximating any `sympy` expression 
+using the Taylor series and Chebyshev polynomials.
+
+It was created as a project for the [DisCont mathematics 2](https://www.fer.unizg.hr/en/course/dismat2)
+course at the Faculty of Electrical Engineering and Computing, University of Zagreb.
+
 ## Installation
+
+Requires at least `python 3.6`.
 
 ```
 pip install -r requirements.txt
 ```
 
-## Functions
+## Submodules
+
+The functionality is divided into two submodules:
+
+ * `chebyshev.polynomial` which is used for computing and storing Chebyshev polynomials, as well as
+ some other simple polynomial manipulation.
+ * `chebyshev.approximation` which is used for approximating any `sympy` expression using the Taylor
+ series and Chebyshev polynomials.
+
+## Related Projects 
+
+ * [ChebyshevPolyfit](https://github.com/LMesaric/ChebyshevPolyfit) by [@LMesaric](https://github.com/LMesaric).
+
+## Approximated Functions
 
 * [`exp(x)`](#expx)
 * [`log(x + 1)`](#logx--1)

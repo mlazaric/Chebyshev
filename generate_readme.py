@@ -46,7 +46,7 @@ generate_for_readme(get_best_approximation(ln(1 + x), (0, 1), 6, 20))
 generate_for_readme(get_best_approximation(sin(x) / x, (-1, 1), 8, 18))
 generate_for_readme(get_best_approximation(cos(x), (-1, 1), 8, 18))
 
-print('## Functions\n')
+print('## Approximated Functions\n')
 
 for (function_name, function_link) in table_of_contents:
     print(f'* [`{function_name}`](#{function_link})')
