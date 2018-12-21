@@ -25,10 +25,6 @@ The functionality is divided into two submodules:
  * `chebyshev.approximation` which is used for approximating any `sympy` expression using the Taylor
  series and Chebyshev polynomials.
 
-## Related Projects 
-
- * [ChebyshevPolyfit](https://github.com/LMesaric/ChebyshevPolyfit) by [@LMesaric](https://github.com/LMesaric).
-
 ## Approximated Functions
 
 * [`exp(x)`](#expx)
@@ -108,3 +104,8 @@ Coefficients for `cos(x)` on the `[-1, 1]` interval:
 Maximum error on that interval is `5.271243441740125e-10`
 
 <img src="images/cos(x)_approximation.png" alt="images/cos(x)_approximation.png" width="50%"><img src="images/cos(x)_absolute_error.png" alt="images/cos(x)_absolute_error.png" width="50%">
+
+
+## Related Projects 
+
+ * [ChebyshevPolyfit](https://github.com/LMesaric/ChebyshevPolyfit) by [@LMesaric](https://github.com/LMesaric).
