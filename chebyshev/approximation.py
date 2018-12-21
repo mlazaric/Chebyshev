@@ -83,10 +83,18 @@ class Approximation:
             if coeff == 0:
                 continue
 
-            xterm = x ** term[0]
+            xpow = term[0]
+
+            if xpow == 0:
+                xterm = '1'
+            elif xpow == 1:
+                xterm = 'x'
+            else:
+                xterm = f'x<sup>{term[0]}</sup>'
+
             fcoeff = coeff.evalf(20)
 
-            table += f'| `{fcoeff:+1.20f}` | `{xterm}` |\n'
+            table += f'| `{fcoeff:+1.20f}` | <code>{xterm}</code> |\n'
 
         return table
 
