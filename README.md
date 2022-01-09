@@ -1,4 +1,4 @@
-# Chebyshev [![Build Status](https://travis-ci.org/mlazaric/Chebyshev.svg?branch=master)](https://travis-ci.org/mlazaric/Chebyshev)
+# Chebyshev [![DOI](https://zenodo.org/badge/160536357.svg)](https://zenodo.org/badge/latestdoi/160536357)
 
 ## Introduction
 
